@@ -67,6 +67,7 @@ Rails.application.routes.draw do
 
   # Routes for the Movie resource:
 
+   get("/", { :controller => "movies", :action => "Home" })
   # CREATE
   post("/insert_movie", { :controller => "movies", :action => "create" })
           
