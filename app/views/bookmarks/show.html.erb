@@ -1,3 +1,4 @@
+
 <div>
   <div>
     <h1>
@@ -12,9 +13,7 @@
       </div>
 
       <div>
-        <a href="/delete_bookmark/<%= @the_bookmark.id %>">
-          Delete bookmark
-        </a>
+ <a href="/delete_bookmark/<%= @the_bookmark.id %>">Un-bookmark</a>
       </div>
     </div>
 
@@ -45,6 +44,9 @@
       </dt>
       <dd>
         <%= time_ago_in_words(@the_bookmark.updated_at) %> ago
+      </dd>
+      <dd>
+ <a href="/delete_bookmark/<%= @the_bookmark.id %>">Un-bookmark</a>
       </dd>
     </dl>
   </div>

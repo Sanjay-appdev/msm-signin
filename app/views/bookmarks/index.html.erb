@@ -16,23 +16,39 @@
 
     <form action="/insert_bookmark" method="post">
       <div>
+
+      <select name="query_movie_id">
+      <% Movie.all.order(:title).each do |movie| %>
+         <option value="<%= movie.id%>">
+         <%= movie.title %>
+         </option>
+
+         <% end %>
+         </select>
+
+<!--
         <label for="user_id_box">
           User
         </label>
 
-        <input type="text" id="user_id_box" name="query_user_id">
+ <input type="hidden" id="user_id_box" name="query_user_id">
       </div>
+
+        -->
+
+       
 
       <div>
         <label for="movie_id_box">
           Movie
         </label>
 
-        <input type="text" id="movie_id_box" name="query_movie_id">
+        <input type="hidden" id="movie_id_box" name="query_movie_id">
       </div>
 
+
       <button>
-        Create bookmark
+        Bookmark this movie
       </button>
     </form>
   </div>
@@ -89,8 +105,7 @@
         </td>
 
         <td>
-          <a href="/bookmarks/<%= a_bookmark.id %>">
-            Show details
+         <a href="/delete_bookmark/<%= a_bookmark.id %>">Un-bookmark</a>
           </a>
         </td>
       </tr>

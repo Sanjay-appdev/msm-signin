@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   post("/insert_bookmark", { :controller => "bookmarks", :action => "create" })
           
   # READ
+
+  get("/add_bookmark", { :controller =>"movies", :action=>"add_user_bookmark"})
   get("/bookmarks", { :controller => "bookmarks", :action => "index" })
   
   get("/bookmarks/:path_id", { :controller => "bookmarks", :action => "show" })
